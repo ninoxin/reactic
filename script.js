@@ -1,12 +1,12 @@
 const employers = ['АртеМ', 'максим', 'Владимир', 'сергей', 'НикиТа', 'евГений', ' Дарья', ' ', 'виктория ', 'ЕкаТерина', '', ' Андрей ', 'КИРИЛЛ'];
 const nameCourse = 'Базовый React';
 const command = [];
-for (var i = 0; i < employers.length; i++) {
-	if (employers[i].length > 0 && employers[i].trim() != '') {
+for (let i = 0; i < employers.length; i++) {
+	if (employers[i].length > 0 && employers[i].trim() !== '') {
 		command.push(employers[i]);
 	}
 }
-for (var i = 0; i < command.length; i++) {
+for (let i = 0; i < command.length; i++) {
 	command[i] = command[i].toLowerCase().trim();
 	command[i] = command[i][0].toUpperCase() + command[i].slice(1);
 }
@@ -17,9 +17,9 @@ const data = {
 	add: ['styled-components', 'firebase']
 };
 
-function calcCash(own) {
+function calcCash(own, arg) {
 	own = own || 0;
-	const everyCash = Array.prototype.slice.call(arguments);
+	const everyCash = [...arg];
 	let total = own;
 	for (let i = 0; i < everyCash[1].length; i++) {
 		total += +everyCash[1][i];
